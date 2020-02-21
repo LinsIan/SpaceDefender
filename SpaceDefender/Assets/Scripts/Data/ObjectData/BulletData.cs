@@ -7,6 +7,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //*******************************************
+// Color Enum
+//*******************************************
+public enum EColor
+{
+	BLUE,
+	YELLO,
+	GREEN
+}
+
+
+//*******************************************
 // Class
 //*******************************************
 public class BulletData
@@ -20,6 +31,7 @@ public class BulletData
 		Damage          = aData.Damage;
 		LifeTime        = aData.LifeTime;
 		MoveSpeed       = aData.MoveSpeed;
+		Color           = aData.Color;
 		ShotSE          = aData.ShotSE;
 		ExplosionEffect = aData.ExplosionEffect;
 	}
@@ -31,6 +43,7 @@ public class BulletData
 	public float Damage;
 	public float LifeTime;
 	public float MoveSpeed;
+	public EColor Color;
 	public GameObject ExplosionEffect;
 	public AudioSource ShotSE;
 }

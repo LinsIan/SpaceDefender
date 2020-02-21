@@ -23,6 +23,11 @@ public class Enemy : CombatUnit
 		set { mData = value; }
 	}
 
+	public EColor Color
+	{
+		get { return mData.Color; }
+	}
+
 	//------------------------------------------------------
 	// Override Functions
 	//------------------------------------------------------

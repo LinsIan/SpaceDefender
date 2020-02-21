@@ -31,9 +31,9 @@ public class Spacecraft : CombatUnit
 	{
 		//create explosion gameobject
 		FindLauncher();
-		mBulletPool       = ObjectPooler.Instance.GetBulletPool(1);
 		mBulletID         = 0;
 		mAttackTimer      = 0;
+		mBulletPool       = ObjectPooler.Instance.GetBulletPool(mBulletID);
 		mBulletNum        = System.Enum.GetValues(typeof(EColor)).Length;
 	}
 
@@ -56,6 +56,7 @@ public class Spacecraft : CombatUnit
 		int aAddAmount = iIsLeft ? mBulletID-- : mBulletID++;
 		if(mBulletID < 0) { mBulletID = mBulletNum-1; }
 		else              { mBulletID %= mBulletNum;  }
+		mBulletPool       = ObjectPooler.Instance.GetBulletPool(mBulletID);
 	}
 
 	protected void FindLauncher()
