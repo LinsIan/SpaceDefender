@@ -11,89 +11,56 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
 	//------------------------------------------------------
-	// Variables
+	// Constants
 	//------------------------------------------------------
-	[SerializeField] private Collider  mSpawnZone;
-	[SerializeField] private Transform mSpawnPoint;
-	private float                             mSpawnTimer;
-	private bool                              mCanSpawn;
-	private Transform                         mPlayer;
-	private Dictionary<int,ObjectPool<Enemy>> mEnemyPoolMap;
-	private List<int>                         mEnemyCumulativeWeight;
+	protected const float MAX_SPAWN_INTERVAL = 1.5f;
+	protected const float MIN_SPAWN_INTERVAL = 1.0f;
+
 
 	//------------------------------------------------------
-	// Accessors
+	// Variables
 	//------------------------------------------------------
-	public bool CanSpawn
-	{
-		set{ mCanSpawn = value; }
-	}
+	private int                               mEnemyNum;
+	private float                             mSpawnTimer;
+	private float                             mSpawnInterval;
+	private Dictionary<int,ObjectPool<Enemy>> mEnemyPoolMap;
 
 	//------------------------------------------------------
 	// Main Functions
 	//------------------------------------------------------
-	public void SpawnByID(int iEnemyID)
-	{
-		Bounds    aBounds      = mSpawnZone.bounds;
-		EnemyData aNewData     = DataManager.Instance.GetEnemyData(iEnemyID);
-		Vector3   aDestination = new Vector3(
-			Random.Range(aBounds.min.x,aBounds.max.x),
-			Random.Range(aBounds.min.y,aBounds.max.y),
-			Random.Range(aBounds.min.z,aBounds.max.z));
-
-		Enemy aNewEnemy = mEnemyPoolMap[iEnemyID].Get();
-		aNewEnemy.transform.position = mSpawnPoint.position;
-		aNewEnemy.transform.rotation = Quaternion.identity;
-		aNewEnemy.Initialize(aNewData);
-	}
-
 	public void Initialize(Dictionary<int,ObjectPool<Enemy>> iEnemyPoolMap, Transform iPlayer)
 	{
 		mEnemyPoolMap = iEnemyPoolMap;
-		mPlayer       = iPlayer;
 		Initialize();
 	}
 
 	private void Initialize()
 	{
-		mSpawnTimer            = 0;
-		mCanSpawn              = false;
-		mEnemyCumulativeWeight = new List<int>();
+		mSpawnInterval = Random.Range(MIN_SPAWN_INTERVAL,MAX_SPAWN_INTERVAL);
+		mSpawnTimer    = 0;
+		mEnemyNum      = System.Enum.GetValues(typeof(EColor)).Length;
 	}
 
 	private void Update()
 	{
-		if(mCanSpawn)
-		{
-			Spawn();
-		}
+		Spawn();
 	}
 
 	private void Spawn()
 	{
 		mSpawnTimer += Time.deltaTime;
+		if(mSpawnTimer >= mSpawnInterval)
+		{
+			int       aEnemyID  = Random.Range(0,mEnemyNum);
+			EnemyData aNewData  = DataManager.Instance.GetEnemyData(aEnemyID);
+			Enemy     aNewEnemy = mEnemyPoolMap[aEnemyID].Get();
 
-		int aRandomNum = Random.Range(1,mEnemyCumulativeWeight[mEnemyCumulativeWeight.Count-1]);
-		int aSelectedEnemyID = 0;
+		//	aNewEnemy.transform.rotation = Quaternion.identity;
+			aNewEnemy.Initialize(aNewData);
 
+			mSpawnInterval = Random.Range(MIN_SPAWN_INTERVAL,MAX_SPAWN_INTERVAL);
+			mSpawnTimer    = 0;
+		}
 
-		Bounds    aBounds      = mSpawnZone.bounds;
-		EnemyData aNewData     = DataManager.Instance.GetEnemyData(aSelectedEnemyID);
-		Vector3   aDestination = new Vector3(
-			Random.Range(aBounds.min.x,aBounds.max.x),
-			Random.Range(aBounds.min.y,aBounds.max.y),
-			Random.Range(aBounds.min.z,aBounds.max.z));
-
-		Enemy aNewEnemy = mEnemyPoolMap[aSelectedEnemyID].Get();
-		aNewEnemy.transform.position = mSpawnPoint.position;
-		aNewEnemy.transform.rotation = Quaternion.identity;
-		aNewEnemy.Initialize(aNewData);
-		mSpawnTimer = 0;
 	}
-
-	private float GetRate(float iEnd,float iStart,float iCompetition)
-	{
-		return iStart + (iEnd - iStart)*iCompetition;
-	}
-
 }
