@@ -18,7 +18,8 @@ public class EnemyData
 		ID              = aData.ID;
 		MaxHP           = aData.MaxHP;
 		MoveSpeed       = aData.MoveSpeed;
-		Money           = aData.Money;
+		Damage          = aData.Damage;
+		Color           = aData.Color;
 		ExplosionSound  = aData.ExplosionSound;
 		ExplosionEffect = aData.ExplosionEffect;
 	}
@@ -29,7 +30,8 @@ public class EnemyData
 	public int ID;
 	public float MaxHP;
 	public float MoveSpeed;
-	public int Money;
+	public float Damage;
+	public EColor Color;
 	public AudioSource ExplosionSound;
 	public GameObject ExplosionEffect;
 }
