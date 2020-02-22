@@ -59,6 +59,11 @@ public class Spacecraft : CombatUnit
 		mBulletPool       = ObjectPooler.Instance.GetBulletPool(mBulletID);
 	}
 
+	public void SetLauncherLookAt(Vector3 iPosition)
+	{
+		mLauncher.LookAt(iPosition);
+	}
+
 	protected void FindLauncher()
 	{
 		mLauncher = transform.Find(LAUNCHER_NAME);
@@ -76,5 +81,10 @@ public class Spacecraft : CombatUnit
 		aNewBullet.Shot(EBulletCamp.Player);
 		
 		mAttackTimer = 0;
+	}
+
+	private void Update()
+	{
+		Attack();
 	}
 }
