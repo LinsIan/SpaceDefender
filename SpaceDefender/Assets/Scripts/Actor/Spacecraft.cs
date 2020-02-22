@@ -78,7 +78,7 @@ public class Spacecraft : CombatUnit
 		aNewBullet.transform.position = mLauncher.position;
 		aNewBullet.transform.LookAt(transform.position + transform.forward);
 		aNewBullet.Initialize(aNewBulletData);
-		aNewBullet.Shot(EBulletCamp.Player);
+		aNewBullet.Shot();
 		
 		mAttackTimer = 0;
 	}

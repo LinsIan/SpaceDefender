@@ -6,36 +6,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //*******************************************
-// Bullet Growth Rate Struct
-//*******************************************
-public struct BulletGrowthRate
-{
-	public float DamageRate;
-	public float SpeedRate;
-	public float SizeRate;
-	public float DamageIntervalRate;
-
-	public BulletGrowthRate(float iDamageRate = 1, float iSpeedRate = 1, float iSizeRate = 1, float iDamageIntervalRate = 1)
-	{
-		DamageRate         = iDamageRate;
-		SpeedRate          = iSpeedRate;
-		SizeRate           = iSizeRate;
-		DamageIntervalRate = iDamageIntervalRate;
-	}
-}
-
-//*******************************************
-// Bullet Camp Enum
-//*******************************************
-public enum EBulletCamp
-{
-	Player,
-	Enemy
-}
-
-
-
-//*******************************************
 // Class
 //*******************************************
 public class Bullet:MonoBehaviour
@@ -69,7 +39,7 @@ public class Bullet:MonoBehaviour
 		Initialize();
 	}
 
-	public void Shot(EBulletCamp iCamp)
+	public void Shot()
 	{
 		mIsShot    = true;
 		mLifeTimer = 0;

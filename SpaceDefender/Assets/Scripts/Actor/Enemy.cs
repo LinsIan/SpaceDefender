@@ -13,7 +13,7 @@ public class Enemy : CombatUnit
 	//------------------------------------------------------
 	// Variables
 	//------------------------------------------------------
-	protected EnemyData       mData;
+	protected EnemyData mData;
 
 	//------------------------------------------------------
 	// Accessors
@@ -33,7 +33,7 @@ public class Enemy : CombatUnit
 	//------------------------------------------------------
 	protected override void Initialize()
 	{
-		mHP          = mData.MaxHP;
+		mHP = mData.MaxHP;
 	}
 
 	protected override void Die()
@@ -42,13 +42,7 @@ public class Enemy : CombatUnit
 		ObjectPooler.Instance.GetEnemyPool(mData.ID).BackToPool(this);
 	}
 
-	//------------------------------------------------------
-	// Virtual Functions
-	//------------------------------------------------------
-	protected virtual void Move()
-	{
-		transform.position = transform.position - Vector3.left * mData.MoveSpeed * Time.deltaTime;	
-	}
+
 
 	//------------------------------------------------------
 	// Main Functions
@@ -59,6 +53,16 @@ public class Enemy : CombatUnit
 		Initialize();
 	}
 
+	protected void Move()
+	{
+		transform.position = transform.position - Vector3.left * mData.MoveSpeed * Time.deltaTime;	
+	}
+
+	private void Update()
+	{
+		Move();
+	}
+
 	private void OnTriggerEnter(Collider other)
 	{
 		if(other.tag == GameTags.TAG_SPACECRAFT)
@@ -66,5 +70,7 @@ public class Enemy : CombatUnit
 			other.gameObject.GetComponent<Spacecraft>().OnHurt(mData.Damage);
 		}
 	}
+
+
 
 }
