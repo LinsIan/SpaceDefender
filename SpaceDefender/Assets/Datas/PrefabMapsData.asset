@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd6aa4c82585164d9927e3b27290caf, type: 3}
+  m_Name: PrefabMapsData
+  m_EditorClassIdentifier: 
+  EnemyPrefabMap:
+  - {fileID: 5207668126792980942, guid: 0938644042caa95419d914fe7628c8e3, type: 3}
+  - {fileID: 864787583164134977, guid: 77fc71d876912c548852e7f5e1d449c9, type: 3}
+  - {fileID: 3042401810646111644, guid: 5938587b626b5984dbe56cbfaea0659a, type: 3}
+  BulletPrefabMap:
+  - {fileID: 7828925771721280778, guid: f3ed16cab15278e46a056edb4d505f44, type: 3}
+  - {fileID: 6616531841773231801, guid: b40951cb9f411bd488ae67ac5cc8ff72, type: 3}
+  - {fileID: 6105707736695660609, guid: b937852b5a9f70a4698239325a9a4475, type: 3}
+  UIPrefabMap: []

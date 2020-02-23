@@ -15,7 +15,7 @@ public class PrefabMapsData : ScriptableObject
 	//------------------------------------------------------
 	// Data Members
 	//------------------------------------------------------
-	public Dictionary<int,GameObject> EnemyPrefabMap;
-	public Dictionary<int,GameObject> BulletPrefabMap;
-	public Dictionary<Type,GameObject> UIPrefabMap;
+	public List<GameObject> EnemyPrefabMap;
+	public List<GameObject> BulletPrefabMap;
+	public List<GameObject> UIPrefabMap;
 }
