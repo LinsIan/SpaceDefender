@@ -12,7 +12,7 @@ using UnityEngine;
 public enum EColor
 {
 	BLUE,
-	YELLO,
+	YELLOW,
 	GREEN
 }
 
