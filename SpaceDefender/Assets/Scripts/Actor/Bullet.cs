@@ -61,7 +61,7 @@ public class Bullet:MonoBehaviour
 		mLifeTimer += Time.deltaTime;
 		if(mLifeTimer >= mData.LifeTime)
 		{
-			ObjectPooler.Instance.GetBulletPool(mData.ID).BackToPool(this);
+			ObjectPooler.Instance.GetBulletPool(mData.ID).BackToPool(gameObject);
 		}
 	}
 
@@ -83,7 +83,7 @@ public class Bullet:MonoBehaviour
 			{
 				aEnemy.OnHurt(mData.Damage);
 			}
-			ObjectPooler.Instance.GetBulletPool(mData.ID).BackToPool(this);
+			ObjectPooler.Instance.GetBulletPool(mData.ID).BackToPool(gameObject);
 		}
 	}
 

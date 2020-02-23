@@ -13,25 +13,23 @@ public class EnemySpawner : MonoBehaviour
 	//------------------------------------------------------
 	// Constants
 	//------------------------------------------------------
-	protected const float MAX_SPAWN_INTERVAL = 1.5f;
-	protected const float MIN_SPAWN_INTERVAL = 1.0f;
+	protected const float MAX_SPAWN_INTERVAL = 2.5f;
+	protected const float MIN_SPAWN_INTERVAL = 2.0f;
 
 
 	//------------------------------------------------------
 	// Variables
 	//------------------------------------------------------
-	private bool                              mIsInitialized = false;
-	private int                               mEnemyNum;
-	private float                             mSpawnTimer;
-	private float                             mSpawnInterval;
-	private Dictionary<int,ObjectPool<Enemy>> mEnemyPoolMap;
+	private bool                       mIsInitialized = false;
+	private int                        mEnemyNum;
+	private float                      mSpawnTimer;
+	private float                      mSpawnInterval;
 
 	//------------------------------------------------------
 	// Main Functions
 	//------------------------------------------------------
 	public void Initialize()
 	{
-		mEnemyPoolMap  = ObjectPooler.Instance.EnemyPoolMap;
 		mSpawnInterval = Random.Range(MIN_SPAWN_INTERVAL,MAX_SPAWN_INTERVAL);
 		mSpawnTimer    = 0;
 		mEnemyNum      = System.Enum.GetValues(typeof(EColor)).Length;
@@ -51,9 +49,9 @@ public class EnemySpawner : MonoBehaviour
 		{
 			int       aEnemyID  = Random.Range(0,mEnemyNum);
 			EnemyData aNewData  = DataManager.Instance.GetEnemyData(aEnemyID);
-			Enemy     aNewEnemy = mEnemyPoolMap[aEnemyID].Get();
+			Enemy     aNewEnemy = ObjectPooler.Instance.GetEnemyPool(aEnemyID).Get<Enemy>();
 
-		//	aNewEnemy.transform.rotation = Quaternion.identity;
+			aNewEnemy.transform.position = transform.position;
 			aNewEnemy.Initialize(aNewData);
 
 			mSpawnInterval = Random.Range(MIN_SPAWN_INTERVAL,MAX_SPAWN_INTERVAL);

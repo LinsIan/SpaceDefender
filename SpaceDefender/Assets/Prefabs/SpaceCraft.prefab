@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1160913573218350730}
   - component: {fileID: 7583717037659560570}
   m_Layer: 0
-  m_Name: default
+  m_Name: Launcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -182,7 +182,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5093456761ffa934dac890c3043c53ad,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5093456761ffa934dac890c3043c53ad,
         type: 3}

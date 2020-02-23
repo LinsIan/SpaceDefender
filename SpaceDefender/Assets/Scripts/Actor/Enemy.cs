@@ -41,7 +41,7 @@ public class Enemy : CombatUnit
 	protected override void Die()
 	{
 		//play explosion effect & SE
-		ObjectPooler.Instance.GetEnemyPool(mData.ID).BackToPool(this);
+		ObjectPooler.Instance.GetEnemyPool(mData.ID).BackToPool(gameObject);
 	}
 
 

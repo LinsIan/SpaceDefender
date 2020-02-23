@@ -19,13 +19,13 @@ public class ObjectPooler : Singleton<ObjectPooler>
 	//------------------------------------------------------
 	// Variables
 	//------------------------------------------------------
-	private Dictionary<int,ObjectPool<Bullet>> mBulletPoolMap;
-	private Dictionary<int,ObjectPool<Enemy>>  mEnemyPoolMap;
+	private Dictionary<int,ObjectPool> mBulletPoolMap;
+	private Dictionary<int,ObjectPool> mEnemyPoolMap;
 
 	//------------------------------------------------------
 	// Accessors
 	//------------------------------------------------------
-	public Dictionary<int,ObjectPool<Enemy>> EnemyPoolMap
+	public Dictionary<int,ObjectPool> EnemyPoolMap
 	{
 		get { return mEnemyPoolMap; }
 	}
@@ -33,7 +33,11 @@ public class ObjectPooler : Singleton<ObjectPooler>
 	//------------------------------------------------------
 	// Override Functions
 	//------------------------------------------------------
-	public override void Initialize(){}
+	public override void Initialize()
+	{
+		mBulletPoolMap = new Dictionary<int, ObjectPool>();
+		mEnemyPoolMap  = new Dictionary<int, ObjectPool>();
+	}
 
 
 	//------------------------------------------------------
@@ -41,7 +45,7 @@ public class ObjectPooler : Singleton<ObjectPooler>
 	//------------------------------------------------------
 	public void Clear(){}
 
-	public ObjectPool<Bullet> GetBulletPool(int iBulletID)
+	public ObjectPool GetBulletPool(int iBulletID)
 	{
 		if(mBulletPoolMap.ContainsKey(iBulletID))
 		{
@@ -53,7 +57,7 @@ public class ObjectPooler : Singleton<ObjectPooler>
 		}
 	}
 
-	public ObjectPool<Enemy> GetEnemyPool(int iEnemyID)
+	public ObjectPool GetEnemyPool(int iEnemyID)
 	{
 		if(mEnemyPoolMap.ContainsKey(iEnemyID))
 		{
@@ -65,22 +69,22 @@ public class ObjectPooler : Singleton<ObjectPooler>
 		}
 	}
 
-	private ObjectPool<Bullet> CreateBulletPool(int iID)
+	private ObjectPool CreateBulletPool(int iID)
 	{
-		GameObject         aBulletPrefab = DataManager.Instance.PrefabMapsData.BulletPrefabMap[iID];
-		GameObject         aNewObject    = new GameObject();
-		ObjectPool<Bullet> aNewPool      = aNewObject.AddComponent<ObjectPool<Bullet>>();
+		GameObject aBulletPrefab = DataManager.Instance.PrefabMapsData.BulletPrefabMap[iID];
+		GameObject aNewObject    = new GameObject();
+		ObjectPool aNewPool      = aNewObject.AddComponent<ObjectPool>();
 		aNewObject.transform.SetParent(transform);
 		aNewPool.Initialize(aBulletPrefab,INIT_BULLET_NUM);
 		mBulletPoolMap.Add(iID,aNewPool);
 		return aNewPool;
 	}
 
-	private ObjectPool<Enemy> CreateEnemyPool(int iID)
+	private ObjectPool CreateEnemyPool(int iID)
 	{
-		GameObject         aEnemyPrefab = DataManager.Instance.PrefabMapsData.EnemyPrefabMap[iID];
-		GameObject         aNewObject   = new GameObject();
-		ObjectPool<Enemy>  aNewPool     = aNewObject.AddComponent<ObjectPool<Enemy>>();
+		GameObject aEnemyPrefab = DataManager.Instance.PrefabMapsData.EnemyPrefabMap[iID];
+		GameObject aNewObject   = new GameObject();
+		ObjectPool aNewPool     = aNewObject.AddComponent<ObjectPool>();
 		aNewObject.transform.SetParent(transform);
 		aNewPool.Initialize(aEnemyPrefab,INIT_ENEMY_NUM);
 		mEnemyPoolMap.Add(iID,aNewPool);

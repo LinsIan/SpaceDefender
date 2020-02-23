@@ -32,8 +32,11 @@ public class GameSystem : Singleton<GameSystem>
 	//------------------------------------------------------
 	// Variables
 	//------------------------------------------------------
-	private EGameState  mGameState;
-	private UpdateEvent mUpdateEvent;
+	private EGameState            mGameState;
+	private UpdateEvent           mUpdateEvent;
+	private Spacecraft            mPlayer;
+	private PlayerInputController mPlayerInputController;
+	private List<EnemySpawner>    mEnemySpawnerList;
 	
 	//------------------------------------------------------
 	// Main Functions
@@ -83,11 +86,32 @@ public class GameSystem : Singleton<GameSystem>
 	private void StartMenu_StartEvent()
 	{
 		UIManager.Instance.CreateMenu<StartMenu>();
+		mEnemySpawnerList = new List<EnemySpawner>();
 	}
-	private void GamePlay_StartEvent(){}
+	private void GamePlay_StartEvent()
+	{
+		mPlayer                = FindObjectOfType(typeof(Spacecraft)) as Spacecraft;
+		mPlayerInputController = FindObjectOfType(typeof(PlayerInputController)) as PlayerInputController;
+		Object [] aSpawnerList = Resources.FindObjectsOfTypeAll(typeof(EnemySpawner));
+		for(int i=0; i<aSpawnerList.Length; ++i)
+		{
+			mEnemySpawnerList.Add(aSpawnerList[i] as EnemySpawner);
+		}
+		mPlayerInputController.Initialize(mPlayer);
+		mPlayer.Initialize();
+		for(int i=0; i<mEnemySpawnerList.Count; ++i)
+		{
+			mEnemySpawnerList[i].Initialize();
+		}
+
+	//	UIManager.Instance.CreateMenu<GamePlayMenu>();
+	}
 	private void GameOver_StartEvent(){}
 
-	private void GamePlay_UpdateEvent(){}
+	private void GamePlay_UpdateEvent()
+	{
+
+	}
 
 
 }

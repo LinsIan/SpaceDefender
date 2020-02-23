@@ -9,14 +9,13 @@ using UnityEngine;
 //*******************************************
 // Class
 //*******************************************
-public class ObjectPool<TClass> : MonoBehaviour
-	where TClass : MonoBehaviour
+public class ObjectPool : MonoBehaviour
 {
 	//------------------------------------------------------
 	// Variables
 	//------------------------------------------------------
 	private GameObject    mPrefab;
-	private Queue<TClass> mClassList;
+	private Queue<GameObject> mClassList ;
 	
 	//------------------------------------------------------
 	// Constructor
@@ -31,36 +30,34 @@ public class ObjectPool<TClass> : MonoBehaviour
 	//------------------------------------------------------
 	public void Initialize(GameObject iPrefab,int iInitObjectNum)
 	{
-		mPrefab = iPrefab;
+		mPrefab    = iPrefab;
+		mClassList = new Queue<GameObject>();
 		for(int i = 0;i< iInitObjectNum; ++i)
 		{
 			Create();
 		}
 	}
 
-	public TClass Get()
+	public TClass Get<TClass>()
 	{
 		if(mClassList.Count == 0) { Create(); }
 
-		TClass        aClass     = mClassList.Dequeue();
-		MonoBehaviour aComponent = (MonoBehaviour)aClass;
-		aComponent.transform .SetParent(null);
-		aComponent.gameObject.SetActive(true);
-		return aClass;
+		GameObject aObject = mClassList.Dequeue();
+		aObject.transform .SetParent(null);
+		aObject.SetActive(true);
+		return aObject.GetComponent<TClass>();
 	}
-	public void BackToPool(TClass iClass)
+	public void BackToPool(GameObject iObject)
 	{
-		MonoBehaviour aComponent = (MonoBehaviour)iClass;
-		aComponent.transform .SetParent(transform);
-		aComponent.gameObject.SetActive(false);
-		mClassList.Enqueue(iClass);
+		iObject.transform .SetParent(transform);
+		iObject.SetActive(false);
+		mClassList.Enqueue(iObject);
 	}
 	private void Create()
 	{
-		GameObject aNewObject = Instantiate(mPrefab,transform);
-		TClass     aNewClass  = aNewObject.GetComponent<TClass>();
+		GameObject aNewObject = Instantiate(mPrefab);
 		aNewObject.SetActive(false);
-		mClassList.Enqueue(aNewClass);
+		mClassList.Enqueue(aNewObject);
 	}
 	
 }

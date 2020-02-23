@@ -49,9 +49,9 @@ public class PlayerInputController : MonoBehaviour
 			mPlayer.ChangeBullet(true);
 		}
 
-		Vector3 aMousePos = Camera.current.ScreenToWorldPoint(Input.mousePosition);
+/*		Vector3 aMousePos = Camera.current.ScreenToWorldPoint(Input.mousePosition);
 		aMousePos.z = mPlayer.transform.position.z;
-		mPlayer.SetLauncherLookAt(aMousePos);
+		mPlayer.SetLauncherLookAt(aMousePos);*/
 	}
 
 

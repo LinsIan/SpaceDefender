@@ -18,12 +18,12 @@ public class Spacecraft : CombatUnit
 	//------------------------------------------------------
 	// Variables
 	//-----------------------------------------------------
-	[SerializeField] protected float              mAttackInterval;
-	protected Transform          mLauncher;
-	protected float              mAttackTimer;
-	protected ObjectPool<Bullet> mBulletPool;
-	protected int                mBulletID;
-	protected int                mBulletNum;
+	[SerializeField] protected float mAttackInterval;
+	protected Transform  mLauncher;
+	protected float      mAttackTimer;
+	protected ObjectPool mBulletPool;
+	protected int        mBulletID;
+	protected int        mBulletNum;
 
 	//------------------------------------------------------
 	// Override Functions
@@ -74,15 +74,17 @@ public class Spacecraft : CombatUnit
 	protected void Attack()
 	{
 		mAttackTimer += Time.deltaTime;
-		
-		Bullet           aNewBullet           = mBulletPool.Get();
-		BulletData       aNewBulletData       = DataManager.Instance.GetBulletData(mBulletID);
-		aNewBullet.transform.position = mLauncher.position;
-		aNewBullet.transform.LookAt(transform.position + transform.forward);
-		aNewBullet.Initialize(aNewBulletData);
-		aNewBullet.Shot();
-		
-		mAttackTimer = 0;
+		if(mAttackTimer >= mAttackInterval)
+		{
+			Bullet     aNewBullet         = mBulletPool.Get<Bullet>();
+			BulletData aNewBulletData     = DataManager.Instance.GetBulletData(mBulletID);
+			aNewBullet.transform.position = mLauncher.position;
+			aNewBullet.transform.LookAt(transform.position + transform.forward);
+			aNewBullet.Initialize(aNewBulletData);
+			aNewBullet.Shot();
+			mAttackTimer = 0;
+		}
+
 	}
 
 	private void Update()

@@ -12,12 +12,165 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bd6aa4c82585164d9927e3b27290caf, type: 3}
   m_Name: PrefabMapsData
   m_EditorClassIdentifier: 
-  EnemyPrefabMap:
-  - {fileID: 5207668126792980942, guid: 0938644042caa95419d914fe7628c8e3, type: 3}
-  - {fileID: 864787583164134977, guid: 77fc71d876912c548852e7f5e1d449c9, type: 3}
-  - {fileID: 3042401810646111644, guid: 5938587b626b5984dbe56cbfaea0659a, type: 3}
-  BulletPrefabMap:
-  - {fileID: 7828925771721280778, guid: f3ed16cab15278e46a056edb4d505f44, type: 3}
-  - {fileID: 6616531841773231801, guid: b40951cb9f411bd488ae67ac5cc8ff72, type: 3}
-  - {fileID: 6105707736695660609, guid: b937852b5a9f70a4698239325a9a4475, type: 3}
-  UIPrefabMap: []
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 5207668126792980942, guid: 0938644042caa95419d914fe7628c8e3, type: 3}
+    - {fileID: 864787583164134977, guid: 77fc71d876912c548852e7f5e1d449c9, type: 3}
+    - {fileID: 3042401810646111644, guid: 5938587b626b5984dbe56cbfaea0659a, type: 3}
+    - {fileID: 7828925771721280778, guid: f3ed16cab15278e46a056edb4d505f44, type: 3}
+    - {fileID: 6616531841773231801, guid: b40951cb9f411bd488ae67ac5cc8ff72, type: 3}
+    - {fileID: 6105707736695660609, guid: b937852b5a9f70a4698239325a9a4475, type: 3}
+    - {fileID: 5360448994972688533, guid: 9822a6f88ce65b0498bb66174ad6d954, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: EnemyPrefabMap
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib],[UnityEngine.GameObject,
+        UnityEngine.CoreModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.Int32,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: BulletPrefabMap
+      Entry: 7
+      Data: 2|System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib],[UnityEngine.GameObject,
+        UnityEngine.CoreModule]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 1
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 10
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 10
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 10
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: UIPrefabMap
+      Entry: 7
+      Data: 3|System.Collections.Generic.Dictionary`2[[System.Type, mscorlib],[UnityEngine.GameObject,
+        UnityEngine.CoreModule]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 4|System.Collections.Generic.ObjectEqualityComparer`1[[System.Type, mscorlib]],
+        mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 7
+      Data: 5|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: StartMenu, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: $v
+      Entry: 10
+      Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
