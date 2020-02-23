@@ -13,9 +13,9 @@ public class DataManager : Singleton<DataManager>
 	//------------------------------------------------------
 	// Variables
 	//------------------------------------------------------
-	private PrefabMapsData      mPrefabMapsData;
-	private BulletDataTable     mBulletDataTable;
-	private EnemyDataTable      mEnemyDataTable;
+	[SerializeField] private PrefabMapsData      mPrefabMapsData;
+	[SerializeField] private BulletDataTable     mBulletDataTable;
+	[SerializeField] private EnemyDataTable      mEnemyDataTable;
 
 
 	//------------------------------------------------------
@@ -47,9 +47,9 @@ public class DataManager : Singleton<DataManager>
 	//------------------------------------------------------
 	// Main Functions
 	//------------------------------------------------------
-	public List<EnemyData> GetEnemyDataMap()
+	public Dictionary<int,EnemyData> GetEnemyDataMap()
 	{
-		return new List<EnemyData>(mEnemyDataTable.DataMap);
+		return new Dictionary<int,EnemyData>(mEnemyDataTable.DataMap);
 	}
 
 	public EnemyData GetEnemyData(int iID)
@@ -57,9 +57,9 @@ public class DataManager : Singleton<DataManager>
 		return new EnemyData(mEnemyDataTable.DataMap[iID]);
 	}
 
-	public List<BulletData> GetBulletDataMap()
+	public Dictionary<int,BulletData> GetBulletDataMap()
 	{
-		return new List<BulletData>(mBulletDataTable.DataMap);
+		return new Dictionary<int,BulletData>(mBulletDataTable.DataMap);
 	}
 
 	public BulletData GetBulletData(int iID)

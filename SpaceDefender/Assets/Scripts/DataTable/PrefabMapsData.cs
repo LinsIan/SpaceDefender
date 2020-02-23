@@ -5,17 +5,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Sirenix.OdinInspector;
 
 //*******************************************
 // Class
 //*******************************************
 [CreateAssetMenu(menuName = "Data/Datable/Create PrefabMapsData")]
-public class PrefabMapsData : ScriptableObject
+public class PrefabMapsData : SerializedScriptableObject
 {
 	//------------------------------------------------------
 	// Data Members
 	//------------------------------------------------------
-	public List<GameObject> EnemyPrefabMap;
-	public List<GameObject> BulletPrefabMap;
-	public List<GameObject> UIPrefabMap;
+	public Dictionary<int,GameObject> EnemyPrefabMap;
+	public Dictionary<int,GameObject> BulletPrefabMap;
+	public Dictionary<Type,GameObject> UIPrefabMap;
 }

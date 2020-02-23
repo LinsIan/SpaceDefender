@@ -79,9 +79,7 @@ public class UIManager : Singleton<UIManager>
 	
 	private void GetUIPrefabData()
 	{
-		List<GameObject> aUIList = DataManager.Instance.PrefabMapsData.UIPrefabMap;
-		
-		
+		mUIPrefabMap = DataManager.Instance.PrefabMapsData.UIPrefabMap;
 	}
 
 }

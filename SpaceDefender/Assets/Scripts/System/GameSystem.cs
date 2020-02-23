@@ -62,7 +62,6 @@ public class GameSystem : Singleton<GameSystem>
 		CreateSigleton<AudioSystem> ();
 		CreateSigleton<ObjectPooler>();
 		CreateSigleton<UIManager>   ();
-		CreateSigleton<DataManager> ();
 		ChangeState(EGameState.StartMenu);
 	}
 

@@ -18,6 +18,7 @@ public class Spacecraft : CombatUnit
 	//------------------------------------------------------
 	// Variables
 	//-----------------------------------------------------
+	[SerializeField] protected float              mAttackInterval;
 	protected Transform          mLauncher;
 	protected float              mAttackTimer;
 	protected ObjectPool<Bullet> mBulletPool;

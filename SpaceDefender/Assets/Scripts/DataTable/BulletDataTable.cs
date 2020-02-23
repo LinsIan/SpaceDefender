@@ -4,16 +4,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 //*******************************************
 // Class
 //*******************************************
 
 [CreateAssetMenu(menuName = "Data/Datable/Create BulletDataTable")]
-public class BulletDataTable : ScriptableObject
+public class BulletDataTable : SerializedScriptableObject
 {
 	//------------------------------------------------------
 	// Data
 	//------------------------------------------------------
-	public List<BulletData> DataMap;
+	public Dictionary<int,BulletData> DataMap;
 }
