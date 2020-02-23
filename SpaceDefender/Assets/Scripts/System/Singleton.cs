@@ -41,6 +41,12 @@ public class Singleton<TClass> : MonoBehaviour
 	//------------------------------------------------------
 	private void Awake()
 	{
+		SetInstance();
+		Initialize();
+	}
+
+	public void SetInstance()
+	{
 		Object.DontDestroyOnLoad(this.gameObject);
 		mInstance = gameObject.GetComponent<TClass>();
 	}

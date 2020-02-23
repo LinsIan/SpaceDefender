@@ -59,6 +59,7 @@ public class GameSystem : Singleton<GameSystem>
 
 	private void Awake()
 	{
+		SetInstance();
 		CreateSigleton<AudioSystem> ();
 		CreateSigleton<ObjectPooler>();
 		CreateSigleton<UIManager>   ();
@@ -79,7 +80,10 @@ public class GameSystem : Singleton<GameSystem>
 		gameObject.AddComponent<TClass>();
 	}
 
-	private void StartMenu_StartEvent(){}
+	private void StartMenu_StartEvent()
+	{
+		UIManager.Instance.CreateMenu<StartMenu>();
+	}
 	private void GamePlay_StartEvent(){}
 	private void GameOver_StartEvent(){}
 

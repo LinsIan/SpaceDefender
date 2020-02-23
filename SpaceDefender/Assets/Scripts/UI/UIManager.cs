@@ -20,9 +20,9 @@ public class UIManager : Singleton<UIManager>
 	//------------------------------------------------------
 	// Variables
 	//------------------------------------------------------
-	private Dictionary<Type,GameObject> mUIPrefabMap;
-	private Dictionary<Type,Menu>       mCreatedMenuMap;
-	private Canvas                      mCanvas;
+	private Dictionary<Type,GameObject>    mUIPrefabMap;
+	private Dictionary<Type,MonoBehaviour> mCreatedMenuMap;
+	private Canvas                         mCanvas;
 
 
 
@@ -32,7 +32,7 @@ public class UIManager : Singleton<UIManager>
 	public override void Initialize()
 	{
 		mUIPrefabMap    = new Dictionary<Type, GameObject>();
-		mCreatedMenuMap = new Dictionary<Type, Menu>();
+		mCreatedMenuMap = new Dictionary<Type, MonoBehaviour>();
 		mCanvas         = null;
 	}
 
@@ -40,7 +40,7 @@ public class UIManager : Singleton<UIManager>
 	// Main Functions
 	//------------------------------------------------------
 	public TMenu CreateMenu<TMenu>()
-	where TMenu : Menu
+	where TMenu : MonoBehaviour
 	{
 		if(mUIPrefabMap.Count == 0) { GetUIPrefabData(); }
 
