@@ -22,6 +22,13 @@ public class ObjectPooler : Singleton<ObjectPooler>
 	private Dictionary<int,ObjectPool<Bullet>> mBulletPoolMap;
 	private Dictionary<int,ObjectPool<Enemy>>  mEnemyPoolMap;
 
+	//------------------------------------------------------
+	// Accessors
+	//------------------------------------------------------
+	public Dictionary<int,ObjectPool<Enemy>> EnemyPoolMap
+	{
+		get { return mEnemyPoolMap; }
+	}
 
 	//------------------------------------------------------
 	// Override Functions

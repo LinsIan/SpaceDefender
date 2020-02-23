@@ -28,7 +28,7 @@ public class Spacecraft : CombatUnit
 	//------------------------------------------------------
 	// Override Functions
 	//------------------------------------------------------
-	protected override void Initialize() 
+	public override void Initialize() 
 	{
 		//create explosion gameobject
 		FindLauncher();
@@ -36,6 +36,7 @@ public class Spacecraft : CombatUnit
 		mAttackTimer      = 0;
 		mBulletPool       = ObjectPooler.Instance.GetBulletPool(mBulletID);
 		mBulletNum        = System.Enum.GetValues(typeof(EColor)).Length;
+		mIsInitialized    = true;
 	}
 
 	public override void OnHurt(float iDamage)
@@ -86,6 +87,7 @@ public class Spacecraft : CombatUnit
 
 	private void Update()
 	{
+		if(!mIsInitialized) { return; }
 		Attack();
 	}
 }

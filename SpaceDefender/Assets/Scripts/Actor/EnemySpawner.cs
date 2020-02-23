@@ -20,6 +20,7 @@ public class EnemySpawner : MonoBehaviour
 	//------------------------------------------------------
 	// Variables
 	//------------------------------------------------------
+	private bool                              mIsInitialized = false;
 	private int                               mEnemyNum;
 	private float                             mSpawnTimer;
 	private float                             mSpawnInterval;
@@ -28,21 +29,18 @@ public class EnemySpawner : MonoBehaviour
 	//------------------------------------------------------
 	// Main Functions
 	//------------------------------------------------------
-	public void Initialize(Dictionary<int,ObjectPool<Enemy>> iEnemyPoolMap, Transform iPlayer)
+	public void Initialize()
 	{
-		mEnemyPoolMap = iEnemyPoolMap;
-		Initialize();
-	}
-
-	private void Initialize()
-	{
+		mEnemyPoolMap  = ObjectPooler.Instance.EnemyPoolMap;
 		mSpawnInterval = Random.Range(MIN_SPAWN_INTERVAL,MAX_SPAWN_INTERVAL);
 		mSpawnTimer    = 0;
 		mEnemyNum      = System.Enum.GetValues(typeof(EColor)).Length;
+		mIsInitialized = true;
 	}
 
 	private void Update()
 	{
+		if(!mIsInitialized) { return; }
 		Spawn();
 	}
 

@@ -19,21 +19,21 @@ public class PlayerInputController : MonoBehaviour
 	//------------------------------------------------------
 	// Variables
 	//------------------------------------------------------
+	private bool       mIsInitialized = false;
 	private Spacecraft mPlayer;
-
-	//------------------------------------------------------
-	// Accessors
-	//------------------------------------------------------
-	public Spacecraft Player
-	{
-		set { mPlayer = value; }
-	}
 	
 	//------------------------------------------------------
 	// Main Functions
 	//------------------------------------------------------
+	public void Initialize(Spacecraft iPlayer)
+	{
+		mPlayer        = iPlayer;
+		mIsInitialized = true;
+	}
+
 	private void Update()
 	{
+		if(!mIsInitialized) { return; }
 		GetPlayerInput();
 	}
 

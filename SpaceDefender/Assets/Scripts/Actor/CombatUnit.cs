@@ -14,6 +14,7 @@ public abstract class CombatUnit : MonoBehaviour
 	//------------------------------------------------------
 	// Variables
 	//------------------------------------------------------
+	protected bool  mIsInitialized = false;
 	protected float mHP;
 
 	//------------------------------------------------------
@@ -31,7 +32,7 @@ public abstract class CombatUnit : MonoBehaviour
 	//------------------------------------------------------
 	// Abstract Functions
 	//------------------------------------------------------
-	protected abstract void Initialize();
+	public    abstract void Initialize();
 	protected abstract void Die();
 
 	

@@ -31,9 +31,11 @@ public class Enemy : CombatUnit
 	//------------------------------------------------------
 	// Override Functions
 	//------------------------------------------------------
-	protected override void Initialize()
+	public override void Initialize()
 	{
-		mHP = mData.MaxHP;
+		mHP            = mData.MaxHP;
+		mIsInitialized = true;
+
 	}
 
 	protected override void Die()
@@ -60,6 +62,7 @@ public class Enemy : CombatUnit
 
 	private void Update()
 	{
+		if(!mIsInitialized) { return; }
 		Move();
 	}
 
