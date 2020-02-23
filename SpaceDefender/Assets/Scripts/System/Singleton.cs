@@ -8,8 +8,8 @@ using UnityEngine;
 //*******************************************
 // Class
 //*******************************************
-abstract public class Singleton<TClass> : MonoBehaviour
-	where TClass : class
+public class Singleton<TClass> : MonoBehaviour
+	where TClass : Component
 {
 	//------------------------------------------------------
 	// Variables
@@ -32,14 +32,14 @@ abstract public class Singleton<TClass> : MonoBehaviour
 	}
 
 	//------------------------------------------------------
-	// Abstract Functions
+	// Virtual Functions
 	//------------------------------------------------------
-	public abstract void Initialize();
+	public virtual void Initialize(){}
 	
 	//------------------------------------------------------
 	// Main Functions
 	//------------------------------------------------------
-	public void SetInstance()
+	private void Awake()
 	{
 		Object.DontDestroyOnLoad(this.gameObject);
 		mInstance = gameObject.GetComponent<TClass>();

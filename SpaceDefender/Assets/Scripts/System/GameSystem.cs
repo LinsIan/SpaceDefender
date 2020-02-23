@@ -18,7 +18,7 @@ public enum EGameState
 //*******************************************
 // Class
 //*******************************************
-public class GameSystem : MonoBehaviour
+public class GameSystem : Singleton<GameSystem>
 {
 	//------------------------------------------------------
 	// Delegate
@@ -75,10 +75,9 @@ public class GameSystem : MonoBehaviour
 	}
 
 	private void CreateSigleton<TClass>()
-		where TClass : class
+		where TClass : Component
 	{
-		Singleton<TClass> aNewSigleton = gameObject.AddComponent<Singleton<TClass>>();
-		aNewSigleton.SetInstance();
+		gameObject.AddComponent<TClass>();
 	}
 
 	private void StartMenu_StartEvent(){}
