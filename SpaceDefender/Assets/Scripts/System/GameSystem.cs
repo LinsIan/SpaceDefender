@@ -27,6 +27,11 @@ public class GameSystem : Singleton<GameSystem>
 	public delegate void UpdateEvent();
 
 	//------------------------------------------------------
+	// Constants
+	//------------------------------------------------------
+	protected const float  DIFFICULTY_GROWTH_RATE = 100f;
+
+	//------------------------------------------------------
 	// Variables
 	//------------------------------------------------------
 	private float                 mGameDifficulty;
@@ -39,7 +44,7 @@ public class GameSystem : Singleton<GameSystem>
 	//------------------------------------------------------
 	// Accessors
 	//------------------------------------------------------
-	public float GameDifficulty
+	public float Difficulty
 	{
 		get { return mGameDifficulty; }
 	}
@@ -127,12 +132,14 @@ public class GameSystem : Singleton<GameSystem>
 		{
 			mEnemySpawnerList[i].Initialize();
 		}
+		mGameDifficulty = 1;
 
 	}
 	private void GameOver_StartEvent()
 	{
 		UIManager.Instance.DeleteMenu<GamePlayMenu>();
 		UIManager.Instance.CreateMenu<GameOverMenu>();
+		mPlayerInputController.enabled = false;
 		Time.timeScale = 0;
 	}
 
@@ -142,6 +149,8 @@ public class GameSystem : Singleton<GameSystem>
 		{
 			ChangeState(EGameState.GameOver);
 		}
+
+		mGameDifficulty += Time.deltaTime/DIFFICULTY_GROWTH_RATE;
 	}
 
 

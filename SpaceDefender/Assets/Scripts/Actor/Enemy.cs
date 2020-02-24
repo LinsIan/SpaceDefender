@@ -57,7 +57,7 @@ public class Enemy : CombatUnit
 
 	protected void Move()
 	{
-		transform.position = transform.position + Vector3.left * mData.MoveSpeed * Time.deltaTime;	
+		transform.position = transform.position + Vector3.left * mData.MoveSpeed * GameSystem.Instance.Difficulty * Time.deltaTime;	
 	}
 
 	private void Update()

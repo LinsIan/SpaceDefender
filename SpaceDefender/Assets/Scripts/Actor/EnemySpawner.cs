@@ -55,6 +55,7 @@ public class EnemySpawner : MonoBehaviour
 			aNewEnemy.Initialize(aNewData);
 
 			mSpawnInterval = Random.Range(MIN_SPAWN_INTERVAL,MAX_SPAWN_INTERVAL);
+			mSpawnInterval /= GameSystem.Instance.Difficulty;
 			mSpawnTimer    = 0;
 		}
 
