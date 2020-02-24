@@ -18,4 +18,9 @@ public class StartMenu : MonoBehaviour
 		GameSystem.Instance.ChangeState(EGameState.GamePlay);
 	}
 
+	public void ShowTutorial()
+	{
+		UIManager.Instance.CreateMenu<TutorialMenu>();
+	}
+
 }
