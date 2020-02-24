@@ -25,7 +25,7 @@ public class Singleton<TClass> : MonoBehaviour
 		{
 			if(mInstance == null)
 			{
-				Debug.LogError("Could not found singleton "+ typeof(TClass));
+			//	Debug.LogError("Could not found singleton "+ typeof(TClass));
 			}
 			return mInstance;
 		}

@@ -11,12 +11,18 @@ using UnityEngine;
 public class DataManager : Singleton<DataManager>
 {
 	//------------------------------------------------------
+	// Constants
+	//------------------------------------------------------
+	private const string PrefabMapsData_PATH  = "Datas/PrefabMapsData";
+	private const string BulletDataTable_PATH = "Datas/BulletDataTable";
+	private const string EnemyDataTable_PATH  = "Datas/EnemyDataTable";
+
+	//------------------------------------------------------
 	// Variables
 	//------------------------------------------------------
 	[SerializeField] private PrefabMapsData      mPrefabMapsData;
 	[SerializeField] private BulletDataTable     mBulletDataTable;
 	[SerializeField] private EnemyDataTable      mEnemyDataTable;
-
 
 	//------------------------------------------------------
 	// Accessors
@@ -42,6 +48,9 @@ public class DataManager : Singleton<DataManager>
 	//------------------------------------------------------	
 	public override void Initialize()
 	{
+		mPrefabMapsData  = Resources.Load<PrefabMapsData> (PrefabMapsData_PATH);
+		mBulletDataTable = Resources.Load<BulletDataTable>(BulletDataTable_PATH);
+		mEnemyDataTable  = Resources.Load<EnemyDataTable> (EnemyDataTable_PATH);
 	}
 
 	//------------------------------------------------------
