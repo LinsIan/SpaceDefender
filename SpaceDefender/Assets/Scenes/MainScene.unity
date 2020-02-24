@@ -968,6 +968,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpaceCraft
       objectReference: {fileID: 0}
+    - target: {fileID: 4949635779914128697, guid: 139bb64efc9aeee4c9176f47e112a0f4,
+        type: 3}
+      propertyPath: mMaxHP
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8228775787388301665, guid: 139bb64efc9aeee4c9176f47e112a0f4,
         type: 3}
       propertyPath: m_LocalPosition.x

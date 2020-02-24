@@ -160,6 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mAttackInterval: 0.3
+  mMaxHP: 10
 --- !u!114 &3837499706140113218
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -23,6 +23,9 @@ MonoBehaviour:
     - {fileID: 6616531841773231801, guid: b40951cb9f411bd488ae67ac5cc8ff72, type: 3}
     - {fileID: 6105707736695660609, guid: b937852b5a9f70a4698239325a9a4475, type: 3}
     - {fileID: 5360448994972688533, guid: 9822a6f88ce65b0498bb66174ad6d954, type: 3}
+    - {fileID: 6614588335746528638, guid: cb74100810eb6514998931640f6ac315, type: 3}
+    - {fileID: 4368371602268843731, guid: 9070d7a2d02cf454ba4558b86b63ce2f, type: 3}
+    - {fileID: 1779059529162661213, guid: c54f201c0383c344a94e44c3fd1446a4, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -149,7 +152,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 1
+      Data: 4
     - Name: 
       Entry: 7
       Data: 
@@ -165,6 +168,60 @@ MonoBehaviour:
     - Name: $v
       Entry: 10
       Data: 6
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 7
+      Data: 6|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: GamePlayMenu, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: $v
+      Entry: 10
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 7
+      Data: 7|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: GameOverMenu, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: $v
+      Entry: 10
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 7
+      Data: 8|System.RuntimeType, mscorlib
+    - Name: 
+      Entry: 1
+      Data: TutorialMenu, Assembly-CSharp
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: $v
+      Entry: 10
+      Data: 9
     - Name: 
       Entry: 8
       Data: 

@@ -52,19 +52,13 @@ MonoBehaviour:
       Data: 1
     - Name: LifeTime
       Entry: 4
-      Data: 2
+      Data: 4
     - Name: MoveSpeed
       Entry: 4
-      Data: 5
+      Data: 18
     - Name: Color
       Entry: 3
       Data: 0
-    - Name: ExplosionEffect
-      Entry: 6
-      Data: 
-    - Name: ShotSE
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -88,19 +82,13 @@ MonoBehaviour:
       Data: 1
     - Name: LifeTime
       Entry: 4
-      Data: 2
+      Data: 4
     - Name: MoveSpeed
       Entry: 4
-      Data: 5
+      Data: 18
     - Name: Color
       Entry: 3
       Data: 1
-    - Name: ExplosionEffect
-      Entry: 6
-      Data: 
-    - Name: ShotSE
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -124,19 +112,13 @@ MonoBehaviour:
       Data: 1
     - Name: LifeTime
       Entry: 4
-      Data: 2
+      Data: 4
     - Name: MoveSpeed
       Entry: 4
-      Data: 5
+      Data: 18
     - Name: Color
       Entry: 3
       Data: 2
-    - Name: ExplosionEffect
-      Entry: 6
-      Data: 
-    - Name: ShotSE
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 

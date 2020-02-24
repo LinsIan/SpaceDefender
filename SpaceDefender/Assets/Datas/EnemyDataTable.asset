@@ -49,22 +49,16 @@ MonoBehaviour:
       Data: 0
     - Name: MaxHP
       Entry: 4
-      Data: 5
+      Data: 1
     - Name: MoveSpeed
       Entry: 4
-      Data: 7
+      Data: 2
     - Name: Damage
       Entry: 4
       Data: 1
     - Name: Color
       Entry: 3
       Data: 0
-    - Name: ExplosionSound
-      Entry: 6
-      Data: 
-    - Name: ExplosionEffect
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -85,22 +79,16 @@ MonoBehaviour:
       Data: 1
     - Name: MaxHP
       Entry: 4
-      Data: 5
+      Data: 1
     - Name: MoveSpeed
       Entry: 4
-      Data: 7
+      Data: 2
     - Name: Damage
       Entry: 4
       Data: 1
     - Name: Color
       Entry: 3
       Data: 1
-    - Name: ExplosionSound
-      Entry: 6
-      Data: 
-    - Name: ExplosionEffect
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
@@ -121,22 +109,16 @@ MonoBehaviour:
       Data: 2
     - Name: MaxHP
       Entry: 4
-      Data: 5
+      Data: 1
     - Name: MoveSpeed
       Entry: 4
-      Data: 7
+      Data: 2
     - Name: Damage
       Entry: 4
       Data: 1
     - Name: Color
       Entry: 3
       Data: 2
-    - Name: ExplosionSound
-      Entry: 6
-      Data: 
-    - Name: ExplosionEffect
-      Entry: 6
-      Data: 
     - Name: 
       Entry: 8
       Data: 
