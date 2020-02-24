@@ -47,7 +47,6 @@ public class Singleton<TClass> : MonoBehaviour
 
 	public void SetInstance()
 	{
-		Object.DontDestroyOnLoad(this.gameObject);
 		mInstance = gameObject.GetComponent<TClass>();
 	}
 

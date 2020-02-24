@@ -20,11 +20,30 @@ public class Spacecraft : CombatUnit
 	// Variables
 	//-----------------------------------------------------
 	[SerializeField] protected float mAttackInterval;
-	protected Transform  mLauncher;
-	protected float      mAttackTimer;
-	protected ObjectPool mBulletPool;
-	protected int        mBulletID;
-	protected int        mBulletNum;
+	[SerializeField] protected float mMaxHP;
+	protected Transform    mLauncher;
+	protected float        mAttackTimer;
+	protected ObjectPool   mBulletPool;
+	protected int          mBulletID;
+	protected int          mBulletNum;
+	protected GamePlayMenu mGamePlayMenu;
+
+	//------------------------------------------------------
+	// Accessors
+	//------------------------------------------------------
+	public GamePlayMenu GamePlayMenu
+	{
+		set 
+		{
+			mGamePlayMenu = value;
+			mGamePlayMenu.SetHP(mMaxHP);
+		}
+	}
+
+	public float HP
+	{
+		get { return mHP; }
+	}
 
 	//------------------------------------------------------
 	// Override Functions
@@ -35,6 +54,7 @@ public class Spacecraft : CombatUnit
 		FindLauncher();
 		mBulletID         = 0;
 		mAttackTimer      = 0;
+		mHP               = mMaxHP;
 		mBulletPool       = ObjectPooler.Instance.GetBulletPool(mBulletID);
 		mBulletNum        = System.Enum.GetValues(typeof(EColor)).Length;
 		mIsInitialized    = true;
@@ -43,12 +63,11 @@ public class Spacecraft : CombatUnit
 	public override void OnHurt(float iDamage)
 	{
 		base.OnHurt(iDamage);
+		mGamePlayMenu.SetHP(mHP);
 	}
 
 	protected override void Die()
 	{
-		//play explosion effect & SE
-		
 	}
 
 	//------------------------------------------------------
@@ -60,6 +79,7 @@ public class Spacecraft : CombatUnit
 		if(mBulletID < 0) { mBulletID = mBulletNum-1; }
 		else              { mBulletID %= mBulletNum;  }
 		mBulletPool       = ObjectPooler.Instance.GetBulletPool(mBulletID);
+		mGamePlayMenu.SetWeapon((EColor)mBulletID);
 	}
 
 	public void RotateLauncher(bool iIsUp)

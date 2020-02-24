@@ -24,8 +24,6 @@ public class UIManager : Singleton<UIManager>
 	private Dictionary<Type,MonoBehaviour> mCreatedMenuMap;
 	private Canvas                         mCanvas;
 
-
-
 	//------------------------------------------------------
 	// Override Functions
 	//------------------------------------------------------
@@ -61,6 +59,17 @@ public class UIManager : Singleton<UIManager>
 		TMenu      aNewMenu       = aNewMenuObject.GetComponent<TMenu>();
 		mCreatedMenuMap.Add(typeof(TMenu),aNewMenu);
 		return aNewMenu;
+	}
+
+	public void DeleteMenu<TMenu>()
+	where TMenu : MonoBehaviour
+	{
+		if(mCreatedMenuMap.ContainsKey(typeof(TMenu)))
+		{
+			Destroy(mCreatedMenuMap[typeof(TMenu)].gameObject);
+			mCreatedMenuMap.Remove(typeof(TMenu));
+		}
+
 	}
 
 	private bool FindCanvas()

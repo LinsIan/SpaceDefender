@@ -16,7 +16,6 @@ public class StartMenu : MonoBehaviour
 	public void GameStart()
 	{
 		GameSystem.Instance.ChangeState(EGameState.GamePlay);
-		Destroy(gameObject);
 	}
 
 }
