@@ -79,7 +79,6 @@ public class GameSystem : Singleton<GameSystem>
 	private void Awake()
 	{
 		SetInstance();
-		CreateSigleton<AudioSystem> ();
 		CreateSigleton<ObjectPooler>();
 		CreateSigleton<UIManager>   ();
 		ChangeState(EGameState.StartMenu);

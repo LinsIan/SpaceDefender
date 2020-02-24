@@ -32,8 +32,6 @@ public class BulletData
 		LifeTime        = aData.LifeTime;
 		MoveSpeed       = aData.MoveSpeed;
 		Color           = aData.Color;
-		ShotSE          = aData.ShotSE;
-		ExplosionEffect = aData.ExplosionEffect;
 	}
 
 	//------------------------------------------------------
@@ -44,6 +42,4 @@ public class BulletData
 	public float LifeTime;
 	public float MoveSpeed;
 	public EColor Color;
-	public GameObject ExplosionEffect;
-	public AudioSource ShotSE;
 }

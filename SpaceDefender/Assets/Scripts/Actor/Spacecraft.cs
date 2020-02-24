@@ -50,7 +50,6 @@ public class Spacecraft : CombatUnit
 	//------------------------------------------------------
 	public override void Initialize() 
 	{
-		//create explosion gameobject
 		FindLauncher();
 		mBulletID         = 0;
 		mAttackTimer      = 0;
@@ -67,8 +66,7 @@ public class Spacecraft : CombatUnit
 	}
 
 	protected override void Die()
-	{
-	}
+	{}
 
 	//------------------------------------------------------
 	// Main Functions

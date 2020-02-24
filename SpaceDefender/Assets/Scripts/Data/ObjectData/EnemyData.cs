@@ -20,8 +20,6 @@ public class EnemyData
 		MoveSpeed       = aData.MoveSpeed;
 		Damage          = aData.Damage;
 		Color           = aData.Color;
-		ExplosionSound  = aData.ExplosionSound;
-		ExplosionEffect = aData.ExplosionEffect;
 	}
 
 	//------------------------------------------------------
@@ -32,6 +30,4 @@ public class EnemyData
 	public float MoveSpeed;
 	public float Damage;
 	public EColor Color;
-	public AudioSource ExplosionSound;
-	public GameObject ExplosionEffect;
 }
