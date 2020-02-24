@@ -15,6 +15,8 @@ public class PlayerInputController : MonoBehaviour
 	//------------------------------------------------------
 	protected const string INPUT_CHANGE_WEAPON_R = "ChangeWeaponR";
 	protected const string INPUT_CHANGE_WEAPON_L = "ChangeWeaponL";
+	protected const string INPUT_UP              = "Up";
+	protected const string INPUT_DOWN            = "Down";
 
 	//------------------------------------------------------
 	// Variables
@@ -49,9 +51,16 @@ public class PlayerInputController : MonoBehaviour
 			mPlayer.ChangeBullet(true);
 		}
 
-/*		Vector3 aMousePos = Camera.current.ScreenToWorldPoint(Input.mousePosition);
-		aMousePos.z = mPlayer.transform.position.z;
-		mPlayer.SetLauncherLookAt(aMousePos);*/
+		if(Input.GetButton(INPUT_UP))
+		{
+			mPlayer.RotateLauncher(true);
+		}
+
+		if(Input.GetButton(INPUT_DOWN))
+		{
+			mPlayer.RotateLauncher(false);
+		}
+
 	}
 
 

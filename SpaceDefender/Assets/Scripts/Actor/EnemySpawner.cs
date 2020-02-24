@@ -13,8 +13,8 @@ public class EnemySpawner : MonoBehaviour
 	//------------------------------------------------------
 	// Constants
 	//------------------------------------------------------
-	protected const float MAX_SPAWN_INTERVAL = 2.5f;
-	protected const float MIN_SPAWN_INTERVAL = 2.0f;
+	protected const float MAX_SPAWN_INTERVAL = 7f;
+	protected const float MIN_SPAWN_INTERVAL = 5f;
 
 
 	//------------------------------------------------------

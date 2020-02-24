@@ -14,6 +14,7 @@ public class Spacecraft : CombatUnit
 	// Constants
 	//------------------------------------------------------
 	protected const string LAUNCHER_NAME = "Launcher";
+	protected const float  ROATION_SPEED = 3f;
 
 	//------------------------------------------------------
 	// Variables
@@ -61,9 +62,16 @@ public class Spacecraft : CombatUnit
 		mBulletPool       = ObjectPooler.Instance.GetBulletPool(mBulletID);
 	}
 
-	public void SetLauncherLookAt(Vector3 iPosition)
+	public void RotateLauncher(bool iIsUp)
 	{
-		mLauncher.LookAt(iPosition);
+		if(iIsUp)
+		{
+			mLauncher.Rotate(new Vector3(0,-ROATION_SPEED,0));
+		}
+		else
+		{
+			mLauncher.Rotate(new Vector3(0,ROATION_SPEED,0));
+		}
 	}
 
 	protected void FindLauncher()
@@ -79,7 +87,7 @@ public class Spacecraft : CombatUnit
 			Bullet     aNewBullet         = mBulletPool.Get<Bullet>();
 			BulletData aNewBulletData     = DataManager.Instance.GetBulletData(mBulletID);
 			aNewBullet.transform.position = mLauncher.position;
-			aNewBullet.transform.LookAt(transform.position + transform.forward);
+			aNewBullet.transform.LookAt(mLauncher.transform.position + mLauncher.transform.forward);
 			aNewBullet.Initialize(aNewBulletData);
 			aNewBullet.Shot();
 			mAttackTimer = 0;

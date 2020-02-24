@@ -57,7 +57,7 @@ public class Enemy : CombatUnit
 
 	protected void Move()
 	{
-		transform.position = transform.position - Vector3.left * mData.MoveSpeed * Time.deltaTime;	
+		transform.position = transform.position + Vector3.left * mData.MoveSpeed * Time.deltaTime;	
 	}
 
 	private void Update()
@@ -71,6 +71,7 @@ public class Enemy : CombatUnit
 		if(other.tag == GameTags.TAG_SPACECRAFT)
 		{
 			other.gameObject.GetComponent<Spacecraft>().OnHurt(mData.Damage);
+			Die();
 		}
 	}
 
