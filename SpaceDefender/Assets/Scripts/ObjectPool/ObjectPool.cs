@@ -1,5 +1,5 @@
 ﻿//*******************************************
-// Object Pooler
+// Object Pool
 //*******************************************
 using System.Collections;
 using System.Collections.Generic;

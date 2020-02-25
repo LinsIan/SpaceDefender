@@ -1,8 +1,15 @@
-﻿using System.Collections;
+﻿//*******************************************
+// Game Play Menu
+//*******************************************
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+//*******************************************
+// Class
+//*******************************************
 public class GamePlayMenu : MonoBehaviour
 {
 	//------------------------------------------------------

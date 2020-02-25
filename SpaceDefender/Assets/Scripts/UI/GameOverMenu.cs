@@ -1,7 +1,13 @@
-﻿using System.Collections;
+﻿//*******************************************
+// Game Over Menu
+//*******************************************
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//*******************************************
+// Class
+//*******************************************
 public class GameOverMenu : MonoBehaviour
 {
 	//------------------------------------------------------

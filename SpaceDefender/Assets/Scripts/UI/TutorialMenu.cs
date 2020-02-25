@@ -1,7 +1,13 @@
-﻿using System.Collections;
+﻿//*******************************************
+// Tutorial Menu
+//*******************************************
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//*******************************************
+// Class
+//*******************************************
 public class TutorialMenu : MonoBehaviour
 {
 	//------------------------------------------------------

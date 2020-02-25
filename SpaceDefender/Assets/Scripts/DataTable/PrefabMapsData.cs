@@ -1,5 +1,5 @@
 ﻿//*******************************************
-// Level Data
+// Prefab Maps Data
 //*******************************************
 using System.Collections;
 using System.Collections.Generic;

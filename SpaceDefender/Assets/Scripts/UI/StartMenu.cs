@@ -1,5 +1,5 @@
 ﻿//*******************************************
-// Class Sample
+// Start Menu
 //*******************************************
 using System.Collections;
 using System.Collections.Generic;
